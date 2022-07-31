@@ -1,0 +1,60 @@
+
+.OutputFrame {
+	height: 400px;
+	width: 400px;
+	background-color: rgb(99, 12, 12);
+	border-radius: 400px;
+	position: relative;
+	overflow: hidden;
+}
+
+.OutputFrame::before {
+	content: "";
+	position: absolute;
+	height: 150%;
+	width: 150%;
+	background:
+		conic-gradient(#fd004c,
+			#fe9000,
+			#fff020,
+			#3edf4b,
+			#3363ff,
+			#b102b7,
+			#fd004c);
+	top: -25%;
+	left: -25%;
+	animation: spin 1.5s linear infinite;
+	
+}
+.OutputFrame::after{
+	content: "";
+	position: absolute;
+	height: 95%;
+	width: 95%;
+	border-radius: 400px;
+	background:rgba(0, 0, 0, 1);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+
+.OutputValue{
+	color: rgb(255, 255, 255);
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	font-size: 40px;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+
+@keyframes spin{
+	100%{
+		transform: rotate(360deg);
+	}
+}
