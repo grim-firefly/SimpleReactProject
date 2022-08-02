@@ -1,0 +1,127 @@
+
+
+.MyBtn {
+	color: rgb(255, 255, 255);
+	background: transparent;
+	outline:none ;
+	padding: 5px 20px;
+	border: 1px solid rgba(2, 156, 255, 1);
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	margin: 0px 3px;
+}
+
+.btnTop {
+	position: absolute;
+	background: linear-gradient(90deg, rgba(2, 156, 255, 0.5046219171262255) 0%, rgba(2, 156, 255, 0.7231093120842087) 45%, rgba(2, 156, 255, 1) 100%);
+	width: 100%;
+	top: 0px;
+	left: -100%;
+	height: 3px;
+
+}
+
+.btnRight {
+	position: absolute;
+	background: linear-gradient(90deg, rgba(2, 156, 255, 0.5046219171262255) 0%, rgba(2, 156, 255, 0.7231093120842087) 45%, rgba(2, 156, 255, 1) 100%);
+
+	width: 3px;
+	top: -100%;
+	right: 0;
+	height: 100%;
+
+}
+
+.btnBottom {
+	position: absolute;
+	background: linear-gradient(90deg, rgba(2, 156, 255, 1) 0%, rgba(2, 156, 255, 0.7231093120842087) 45%, rgba(2, 156, 255, 0.5046219171262255) 100%);
+	width: 100%;
+	bottom: 0;
+	right: -100%;
+	height: 3px;
+}
+
+
+.btnLeft {
+	position: absolute;
+	background: linear-gradient(90deg, rgba(2, 156, 255, 1) 0%, rgba(2, 156, 255, 0.7231093120842087) 45%, rgba(2, 156, 255, 0.5046219171262255) 100%);
+	width: 3px;
+	bottom: -100%;
+	left: 0;
+	height: 100%;
+
+}
+
+
+.MyBtn:hover .btnTop {
+	animation: animate1 1s linear infinite;
+}
+
+.MyBtn:hover .btnBottom {
+
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+
+}
+
+.MyBtn:hover .btnRight {
+	animation: animate2 1s linear infinite;
+	/* animation: animate2 1s linear infinite ; */
+	animation-delay: 0.25s;
+}
+
+.MyBtn:hover .btnLeft {
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+
+}
+.MyBtn:active{
+	background-color: rgba(2, 156, 255, 1);
+}
+
+@keyframes animate1 {
+	0% {
+		left: -100%;
+	}
+
+	50%,
+	100% {
+		left: 100%;
+	}
+
+}
+
+@keyframes animate2 {
+	0% {
+		top: -100%;
+	}
+
+	50%,
+	100% {
+		top: 100%;
+	}
+}
+
+@keyframes animate3 {
+	0% {
+		right: -100%;
+	}
+
+	50%,
+	100% {
+		right: 100%;
+	}
+
+}
+
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+	}
+
+	50%,
+	100% {
+		bottom: 100%;
+	}
+}

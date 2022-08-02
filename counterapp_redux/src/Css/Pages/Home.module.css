@@ -1,0 +1,29 @@
+
+.Home {
+	width: 100%;
+	height: 940px;
+	overflow: hidden;	
+	position: relative;
+	
+}
+
+.BackgroundImages {
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	position: absolute;
+}
+.Controllers{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	top: 70%;
+	left: 40%;
+}
+
+.OutputPlace{
+	position:absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-53%, -40%);
+}
