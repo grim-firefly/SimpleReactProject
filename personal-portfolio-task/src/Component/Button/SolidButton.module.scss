@@ -1,0 +1,41 @@
+$border: #ec5b53;
+$btn-hover: #e44239;
+
+
+.btn {
+	width: 120px;
+	height: 40px;
+	position: relative;
+	text-align: center;
+	border: none;
+	overflow: hidden;
+	background: $border;
+	border-radius: 5px;
+
+
+	.btnText {
+		color: #fff;
+		white-space: nowrap;
+		font-size: 14px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-weight: bold;
+	}
+}
+
+.btn::before {
+	content: "";
+	height: 110%;
+	width: 110%;
+	top: 0%;
+	left: -120%;
+	position: absolute;
+	background-color: $btn-hover;
+	transition: all 300ms linear;
+}
+
+.btn:hover::before {
+	left: 0%;
+}
