@@ -18,9 +18,11 @@ $sajid-color: #002d5b;
 		.btnGroup {
 			display: flex;
 		}
-		.btnGroupElement{
+
+		.btnGroupElement {
 			margin-right: 10px;
 		}
+
 		.HeroCaption {
 			display: block;
 			width: 100%;
@@ -43,12 +45,25 @@ $sajid-color: #002d5b;
 				margin-top: 30px;
 				white-space: wrap;
 				font-family: 'Rubik', sans-serif;
+				max-width: 500px;
+				position: relative;
 
+
+
+			}
+
+			.HeroHeading::after {
+				content: '';
+				position: absolute;
+				height: 70px;
+				width: 5px;
+				background-color: $sajid-color;
+				animation: blink 0.5s infinite ease;
 			}
 
 			.HeroDes {
 				margin-top: 30px;
-				max-width: 500px;
+				max-width: 350px;
 				font-size: 14px;
 				font-weight: 100;
 				text-transform: capitalize;
@@ -60,4 +75,15 @@ $sajid-color: #002d5b;
 
 
 	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+
 }
