@@ -67,7 +67,7 @@ const HeroCaption = () => {
 					<div className={`${style.Caption}  col-lg-6 col-md-8 `}>
 						<div className={`${style.HeroCaption}`}>
 							<div> <h3 className={style.CaptionHeading} >Get Every Single Solutions</h3> </div>
-							<div> <h3 className={style.HeroHeading} >I'm <span id="typed">MD. Khairul Hasan Sajid</span></h3> </div>
+							<div className={style.HeroHeaderSpace}> <h3 className={style.HeroHeading} >I'm <span id="typed">MD. Khairul Hasan Sajid</span></h3> </div>
 							<div> <p className={style.HeroDes}>jhorem rfpsum golor sidt amet, consectetur adipiscing elit, eiusmod tempor incididunt utcjhg labore bet dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p> </div>
 						</div>
 						<div className={style.btnGroup}>

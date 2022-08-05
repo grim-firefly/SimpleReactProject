@@ -27,7 +27,9 @@ $sajid-color: #002d5b;
 			display: block;
 			width: 100%;
 			text-align: left;
-
+			.HeroHeaderSpace{
+				height: 150px;
+			}
 			.CaptionHeading {
 				color: $text-coor ;
 				font-size: 16px;
