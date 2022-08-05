@@ -1,0 +1,100 @@
+$card-border: #e1ebf7;
+$card-des: #002d5b;
+$card-hover: #e44239;
+
+.Card {
+	max-width: 350px;
+	height: 440px !important;
+	border: 1px solid $card-border;
+	position: relative;
+	overflow: hidden;
+
+	.cardImagehead {
+		z-index: 1;
+		Width: 100px;
+		height: 100px;
+		border-radius: 100px;
+		position: absolute;
+		top: 25%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+		background-color: #FFF;
+
+		.cardImgpos {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			.cardImg {
+				position: absolute;
+				width: 60px;
+				height: 60px;
+				border-radius: 60px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+			}
+
+		}
+	}
+
+	.cardContent {
+		position: absolute;
+		top: 50%;
+		left: 0%;
+		width: 100%;
+		z-index: 1;
+		align-items: center;
+
+	}
+
+	.cardheading {
+		color: $card-des ;
+		font-size: 24px;
+		text-transform: capitalize;
+		font-weight: 500;
+		white-space: wrap;
+		font-family: 'Rubik', sans-serif;
+		text-align: center;
+	}
+
+	.carddes {
+		color: #555;
+		display: block;
+		width: 100%;
+		margin-top: 30px;
+		font-size: 12px;
+		font-weight: normal;
+		text-transform: capitalize;
+		white-space: wrap;
+		text-align: justify;
+		font-family: 'Rubik', sans-serif;
+		position: relative;
+	}
+
+}
+
+.Card::after {
+	content: '';
+	position: absolute;
+	height: 110%;
+	width: 110%;
+	bottom: -120%;
+	background-color: $card-hover;
+	transition: all 0.4s linear;
+}
+
+.Card:hover .cardheading {
+	color: #FFF;
+
+}
+
+.Card:hover .carddes {
+	color: #FFF;
+
+}
+
+.Card:hover::after {
+	bottom: 0%;
+}

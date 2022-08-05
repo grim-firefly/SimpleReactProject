@@ -4,30 +4,57 @@ import background from './Images/backgroundimage.webp';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import OutlineButton from '../Button/OutlineButton';
 import SolidButton from '../Button/SolidButton';
+import { wait } from '@testing-library/user-event/dist/utils';
 const HeroCaption = () => {
-
-	useEffect(() => {
-		const texts = ["MD. Khairul Hasan Sajid", "Software Engineer"];
+	const Typer = async () => {
+		const texts = ["MD. Khairul Hasan Sajid", "Software Engineer", "Web Developer", "Illus1on"];
 		let index = 0;
 		let cnt = 0;
 		let currentText = "";
 		let modifiedText = "";
-		
+		let deleting = false;
+		let typeSpeed = 400;
+		let waitnow = false;
+		let waitTime = 2000;
 		const Type = async () => {
 			if (cnt == texts.length) {
 				cnt = 0;
 			}
+
 			currentText = texts[cnt];
-			modifiedText = currentText.slice(0, ++index);
-			document.getElementById("typed").innerHTML = modifiedText;
-			if (modifiedText.length == currentText.length) {
-				cnt++;
-				index = 0;
+			if (deleting) {
+				modifiedText = currentText.substring(0, index - 1);
+				index--;
 			}
-			await setTimeout(Type, 400);
+			else {
+				modifiedText = currentText.substring(0, index + 1);
+				index++;
+			}
+
+			document.getElementById("typed").innerHTML = modifiedText;
+			if (modifiedText.length == '' && deleting == true) {
+				deleting = false;
+				cnt++;
+			}
+			else if (modifiedText.length == currentText.length && deleting == false) {
+				deleting = true;
+				waitnow = true;
+
+			}
+			if (waitnow) {
+				waitnow = false;
+				await setTimeout(Type, waitTime);
+			}
+			else {
+				setTimeout(Type, deleting ? typeSpeed / 2 : typeSpeed);
+			}
+
 
 		};
 		Type();
+	}
+	useEffect(() => {
+		Typer();
 
 	}, []);
 
